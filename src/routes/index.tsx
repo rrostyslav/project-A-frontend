@@ -15,7 +15,7 @@ function Home() {
 
   return (
     <div class="p-2 flex flex-col gap-y-4 items-center">
-      <h3>Starter SolidJS + Tanstack Router + Tanstack Query</h3>
+      <h3 class="text-green-600 text-2xl">Starter SolidJS + Tanstack Router + Tanstack Query</h3>
 
       <Switch>
         <Match when={query.isPending}>Loading...</Match>
