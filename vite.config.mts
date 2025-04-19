@@ -1,7 +1,6 @@
 import { TanStackRouterVite } from '@tanstack/router-plugin/vite'
 import { defineConfig } from 'vite'
 import solid from 'vite-plugin-solid'
-import tailwindcss from '@tailwindcss/vite'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -10,7 +9,7 @@ const __dirname = dirname(__filename)
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [tailwindcss(), TanStackRouterVite({ target: 'solid' }), solid()],
+  plugins: [TanStackRouterVite({ target: 'solid' }), solid()],
   resolve: {
     alias: {
       '@': resolve(__dirname, './src'),
