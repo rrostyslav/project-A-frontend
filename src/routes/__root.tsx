@@ -16,8 +16,6 @@ export const Route = createRootRoute({
 function RootComponent() {
   return (
     <>
-
-
       <Outlet />
       {/* Start rendering router matches */}
       <TanStackRouterDevtools position="bottom-right" />
