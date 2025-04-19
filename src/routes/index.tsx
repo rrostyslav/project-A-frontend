@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useQuery } from '@tanstack/solid-query'
 import { createFileRoute } from '@tanstack/solid-router'
 import { Match, Switch } from 'solid-js'
@@ -31,4 +32,14 @@ function Home() {
       </Switch>
     </div>
   )
+=======
+import { createFileRoute } from '@tanstack/solid-router'
+
+export const Route = createFileRoute('/')({
+  component: RouteComponent,
+})
+
+function RouteComponent() {
+  return <div>Hello "/"!</div>
+>>>>>>> d6ecf43 (feat: biome base setup)
 }
