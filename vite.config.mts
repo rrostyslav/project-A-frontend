@@ -9,10 +9,10 @@ const __dirname = dirname(__filename);
 
 // https://vitejs.dev/config/
 export default defineConfig({
-	plugins: [TanStackRouterVite({ target: "solid" }), solid()],
-	resolve: {
-		alias: {
-			"@": resolve(__dirname, "./src"),
-		},
-	},
+  plugins: [TanStackRouterVite({ target: "solid" }), solid()],
+  resolve: {
+    alias: {
+      "@": resolve(__dirname, "./src"),
+    },
+  },
 });

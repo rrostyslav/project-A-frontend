@@ -1,18 +1,18 @@
 {
-	"compilerOptions": {
-		"baseUrl": "./",
-		"paths": {
-			"@/*": ["./src/*"]
-		},
-		"strict": true,
-		"esModuleInterop": true,
-		"jsx": "preserve",
-		"jsxImportSource": "solid-js",
-		"lib": ["DOM", "DOM.Iterable", "ES2022"],
-		"skipLibCheck": true,
-		"moduleResolution": "bundler",
-		"module": "ES2022",
-		"types": ["vite/client", "@testing-library/jest-dom"]
-	},
-	"include": ["./src", "vite.config.mts"]
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "strict": true,
+    "esModuleInterop": true,
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js",
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
+    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "module": "ES2022",
+    "types": ["vite/client", "@testing-library/jest-dom"]
+  },
+  "include": ["./src", "vite.config.mts"]
 }
