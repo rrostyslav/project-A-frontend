@@ -1,5 +1,6 @@
 colors: true
 skip_output: [meta, success]
+
 #---------------------------------------------
 # Pre-commit checks
 #---------------------------------------------
@@ -28,7 +29,8 @@ pre-commit:
       glob: '*.{js,jsx,ts,tsx,vue}'
       run: |
         echo "🐛 Checking for debug code..."
-        grep -L "console.log\\|debugger" {staged_files} || echo "⚠️ Debug code detected!"
+        grep -L "console.log\|debugger" {staged_files} || echo "⚠️ Debug code detected!"
+
 #---------------------------------------------
 # Commit message validation
 #---------------------------------------------
@@ -39,6 +41,7 @@ commit-msg:
       run: |
         echo "📝 Validating commit message..."
         npx --no-install commitlint --edit "$1"
+
 #---------------------------------------------
 # Branch operations
 #---------------------------------------------
@@ -47,10 +50,11 @@ post-merge:
     update-deps:
       run: |
         echo "📦 Checking dependencies..."
-        if git diff --name-only HEAD@{1} HEAD | grep -E 'pnpm-lock.yaml|package.json'; then
+        if git diff --name-only ORIG_HEAD HEAD | grep -E 'pnpm-lock.yaml|package.json'; then
           echo "📦 Updating dependencies..."
           pnpm install
         fi
+
 post-checkout:
   commands:
     setup:
