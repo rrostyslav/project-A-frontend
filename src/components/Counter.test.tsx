@@ -6,12 +6,12 @@ import { Counter } from "./Counter";
 const user = userEvent.setup();
 
 test("increments value", async () => {
-	const { getByRole } = render(() => <Counter />);
+  const { getByRole } = render(() => <Counter />);
 
-	const counter = getByRole("button");
-	expect(counter).toHaveTextContent("1");
+  const counter = getByRole("button");
+  expect(counter).toHaveTextContent("1");
 
-	await user.click(counter);
+  await user.click(counter);
 
-	expect(counter).toHaveTextContent("2");
+  expect(counter).toHaveTextContent("2");
 });
