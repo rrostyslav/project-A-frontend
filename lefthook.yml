@@ -11,19 +11,19 @@ pre-commit:
       glob: '*.{js,jsx,ts,tsx,vue}'
       run: |
         echo "🔍 Linting code..."
-        pnpm lint {staged_files}
+        bun run lint {staged_files}
       skip: [merge, rebase]
     format:
       glob: '*.{js,jsx,ts,tsx,vue,json,md}'
       run: |
         echo "✨ Formatting code..."
-        pnpm fmt:fix
+        bun run fmt:fix
       stage_fixed: true
-    typecheck:
+    type-check:
       glob: '*.{ts,tsx}'
       run: |
         echo "🔎 Type checking..."
-        pnpm exec tsc --noEmit
+        bun run type-check
       skip: [merge, rebase]
     no-debug:
       glob: '*.{js,jsx,ts,tsx,vue}'
@@ -50,9 +50,9 @@ post-merge:
     update-deps:
       run: |
         echo "📦 Checking dependencies..."
-        if git diff --name-only ORIG_HEAD HEAD | grep -E 'pnpm-lock.yaml|package.json'; then
+        if git diff --name-only ORIG_HEAD HEAD | grep -E 'bun.lockb|package.json'; then
           echo "📦 Updating dependencies..."
-          pnpm install
+          bun install
         fi
 
 post-checkout:
@@ -60,8 +60,8 @@ post-checkout:
     setup:
       run: |
         echo "🧹 Preparing workspace..."
-        pnpm run check
-        if [ "$3" = "1" ] && git diff --name-only $1 $2 | grep -E 'pnpm-lock.yaml|package.json'; then
+        bun run check
+        if [ "$3" = "1" ] && git diff --name-only $1 $2 | grep -E 'bun.lockb|package.json'; then
           echo "📦 Updating dependencies for new branch..."
-          pnpm install
+          bun install
         fi
