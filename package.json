@@ -7,8 +7,10 @@
     "node": ">=22.0.0"
   },
   "scripts": {
-    "dev":              "vite --open",
-    "build":            "tsc --noEmit && vite build",
+    "dev":              "bunx --bun vite --open",
+    "build-only":       "bunx --bun vite build",
+    "build":            "run-p type-check \"build-only {@}\" --",
+    "type-check":       "tsc --noEmit",
     "preview":          "vite preview",
     "https-preview":    "serve dist",
     "serve":            "vite preview",
@@ -27,7 +29,7 @@
     "biome:check":      "pnpm fmt && pnpm lint && pnpm check",
     "generate-routes":  "tsr generate",
     "watch-routes":     "tsr watch",
-    "prepare":          "lefthook install && npx -y only-allow pnpm"
+    "prepare":          "lefthook install && npx -y only-allow bun"
   },
 
 "dependencies": {
@@ -61,6 +63,7 @@
     "typescript": "^5.8.3",
     "vite": "^6.3.2",
     "vite-plugin-solid": "^2.11.6",
-    "vitest": "^3.1.1"
+    "vitest": "^3.1.1",
+    "npm-run-all2": "^7.0.2"
   }
 }
