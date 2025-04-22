@@ -1,3 +1,4 @@
+# lefthook.yml
 colors: true
 skip_output: [meta, success]
 
@@ -13,7 +14,6 @@ pre-commit:
         echo "🔍 Linting code..."
         bun run lint:oxlint {staged_files}
         bun run lint:eslint {staged_files}
-        
       skip: [merge, rebase]
 
     format:
@@ -54,7 +54,8 @@ post-merge:
     update-deps:
       run: |
         echo "📦 Checking dependencies..."
-        if git diff --name-only HEAD@{1} HEAD | grep -E 'bun\.lock|package\.json'; then
+        # use ORIG_HEAD to refer to the previous HEAD without shell brace expansion
+        if git diff --name-only ORIG_HEAD HEAD | grep -E 'bun\.lock|package\.json'; then
           echo "📦 Updating dependencies..."
           bun install
         fi
@@ -65,6 +66,7 @@ post-checkout:
       run: |
         echo "🧹 Preparing workspace..."
         bun run clean
+        # $3 = "1" when switching branches
         if [ "$3" = "1" ] && git diff --name-only $1 $2 | grep -E 'bun\.lock|package\.json'; then
           echo "📦 Updating dependencies for new branch..."
           bun install
