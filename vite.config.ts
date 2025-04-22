@@ -9,6 +9,7 @@ import path from 'path'
 
 // https://vite.dev/config/
 export default defineConfig({
+  cacheDir: 'node_modules/.vite',
   plugins: [
     vue(),
     vueJsx(),
