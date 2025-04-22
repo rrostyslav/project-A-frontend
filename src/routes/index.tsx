@@ -1,3 +1,9 @@
+import { Button } from "@/shared/ui/button";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/shared/ui/collapsible";
 import { useQuery } from "@tanstack/solid-query";
 import { createFileRoute } from "@tanstack/solid-router";
 import { Match, Switch } from "solid-js";
@@ -20,6 +26,17 @@ function Home() {
       <h3 class="text-green-600 text-2xl">
         Starter SolidJS + Tanstack Router + Tanstack Query
       </h3>
+
+      <div>
+        <Button>Click me</Button>
+      </div>
+      <Collapsible>
+        <CollapsibleTrigger>Can I use this in my project?</CollapsibleTrigger>
+        <CollapsibleContent>
+          Yes. Free to use for personal and commercial projects. No attribution
+          required.
+        </CollapsibleContent>
+      </Collapsible>
 
       <Switch>
         <Match when={query.isPending}>Loading...</Match>
