@@ -32,6 +32,7 @@
     "prepare": "lefthook install && npx -y only-allow bun"
   },
   "dependencies": {
+    "@kobalte/core": "^0.13.9",
     "@tanstack/router-plugin": "^1.116.1",
     "@tanstack/solid-query": "^5.74.4",
     "@tanstack/solid-router": "^1.116.0",
@@ -57,12 +58,12 @@
     "autoprefixer": "^10.4.21",
     "jsdom": "^26.1.0",
     "lefthook": "^1.11.11",
+    "npm-run-all2": "^7.0.2",
     "postcss": "^8.5.3",
-    "tailwindcss": "^4.1.4",
+    "tailwindcss": "3",
     "typescript": "^5.8.3",
     "vite": "^6.3.2",
     "vite-plugin-solid": "^2.11.6",
-    "vitest": "^3.1.2",
-    "npm-run-all2": "^7.0.2"
+    "vitest": "^3.1.2"
   }
 }
