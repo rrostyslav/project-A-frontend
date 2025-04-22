@@ -11,7 +11,9 @@ pre-commit:
       glob: '*.{js,jsx,ts,tsx,vue}'
       run: |
         echo "🔍 Linting code..."
-        bun run lint {staged_files}
+        bun run lint:oxlint {staged_files}
+        bun run lint:eslint {staged_files}
+        
       skip: [merge, rebase]
 
     format:
