@@ -1,35 +1,12 @@
 {
-  "compilerOptions": {
-    "baseUrl": "./",
-    "paths": {
-      "@/*": ["src/*"]
-    },
-    "strict": true,
-    "composite": true,
-    "esModuleInterop": true,
-    "jsx": "preserve",
-    "jsxImportSource": "solid-js",
-    "lib": ["DOM", "DOM.Iterable", "ES2022"],
-    "skipLibCheck": true,
-    "moduleResolution": "bundler",
-    "module": "ES2022",
-
-    "types": [
-      "node",
-      "vite/client",
-      "vitest/globals",
-      "@testing-library/jest-dom"
-    ]
-  },
-
-  "include": [
-    "src/**/*",
-    "src/env.d.ts",
-    "types/**/*",
-    "vite.config.*",
-    "node_modules/vitest/globals.d.ts"
-  ],
+  "files": [],
   "references": [
+    {
+      "path": "./tsconfig.node.json"
+    },
+    {
+      "path": "./tsconfig.app.json"
+    },
     {
       "path": "./tsconfig.vitest.json"
     }

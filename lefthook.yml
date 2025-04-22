@@ -13,23 +13,25 @@ pre-commit:
         echo "🔍 Linting code..."
         bun run lint {staged_files}
       skip: [merge, rebase]
+
     format:
       glob: '*.{js,jsx,ts,tsx,vue,json,md}'
       run: |
         echo "✨ Formatting code..."
-        bun run fmt:fix
-      stage_fixed: true
-    type-check:
+        bun run format
+
+    typecheck:
       glob: '*.{ts,tsx}'
       run: |
         echo "🔎 Type checking..."
         bun run type-check
       skip: [merge, rebase]
+
     no-debug:
       glob: '*.{js,jsx,ts,tsx,vue}'
       run: |
         echo "🐛 Checking for debug code..."
-        grep -L "console.log\|debugger" {staged_files} || echo "⚠️ Debug code detected!"
+        grep -L "console.log\\|debugger" {staged_files} || echo "⚠️ Debug code detected!"
 
 #---------------------------------------------
 # Commit message validation
@@ -40,7 +42,7 @@ commit-msg:
     commitlint:
       run: |
         echo "📝 Validating commit message..."
-        npx --no-install commitlint --edit "$1"
+        bunx --no-install commitlint --edit "$1"
 
 #---------------------------------------------
 # Branch operations
@@ -50,7 +52,7 @@ post-merge:
     update-deps:
       run: |
         echo "📦 Checking dependencies..."
-        if git diff --name-only ORIG_HEAD HEAD | grep -E 'bun.lockb|package.json'; then
+        if git diff --name-only HEAD@{1} HEAD | grep -E 'bun\.lock|package\.json'; then
           echo "📦 Updating dependencies..."
           bun install
         fi
@@ -60,8 +62,8 @@ post-checkout:
     setup:
       run: |
         echo "🧹 Preparing workspace..."
-        bun run check
-        if [ "$3" = "1" ] && git diff --name-only $1 $2 | grep -E 'bun.lockb|package.json'; then
+        bun run clean
+        if [ "$3" = "1" ] && git diff --name-only $1 $2 | grep -E 'bun\.lock|package\.json'; then
           echo "📦 Updating dependencies for new branch..."
           bun install
         fi

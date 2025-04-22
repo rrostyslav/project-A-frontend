@@ -1,1 +1,0 @@
-export { appEnv } from "./env";
