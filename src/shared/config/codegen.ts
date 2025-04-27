@@ -1,4 +1,3 @@
-// src/shared/config/codegen.ts
 import { config as loadDotenv } from 'dotenv'
 import type { CodegenConfig } from '@graphql-codegen/cli'
 

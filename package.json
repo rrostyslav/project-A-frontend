@@ -1,5 +1,5 @@
 {
-  "name": "it-traveler",
+  "name": "project-a-frontend",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -20,7 +20,8 @@
     "codegen": "bunx graphql-codegen --config src/shared/config/codegen.ts",
     "codegen:watch": "bunx graphql-codegen --config src/shared/config/codegen.ts --watch",
     "dep-cruiser:preview": "bunx depcruise src --include-only \"^src\" --output-type dot | dot -T svg > dependency-graph-preview.svg",
-    "segments:generate": "bunx fsd"
+    "segments:generate": "bunx fsd",
+    "release": "bunx semantic-release"
   },
   "license": "MIT",
   "engines": {
@@ -59,6 +60,12 @@
     "@graphql-codegen/typescript-operations": "^4.6.0",
     "@graphql-codegen/typescript-vue-apollo": "^4.1.1",
     "@playwright/test": "^1.52.0",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^13.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^11.0.2",
+    "@semantic-release/npm": "^12.0.1",
+    "@semantic-release/release-notes-generator": "^14.0.3",
     "@tailwindcss/vite": "^4.1.4",
     "@tsconfig/node22": "^22.0.1",
     "@types/jsdom": "^21.1.7",
@@ -82,6 +89,7 @@
     "lint-staged": "^15.5.1",
     "npm-run-all2": "^7.0.2",
     "prettier": "^3.5.3",
+    "semantic-release": "^24.2.3",
     "tailwindcss": "^4.1.4",
     "typescript": "~5.8.3",
     "vite": "^6.3.3",
