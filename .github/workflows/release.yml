@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      - next   # if you use a prerelease branch
+      - next
 
 jobs:
   release:
