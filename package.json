@@ -17,7 +17,8 @@
     "check:watch": "bunx steiger ./src --watch",
     "format": "prettier --write src/",
     "prepare": "lefthook install",
-    "clean": "rimraf dist && rimraf node_modules"
+    "clean": "rimraf dist && rimraf node_modules",
+    "dep-cruiser:preview": "bunx depcruise src --include-only \"^src\" --output-type dot | dot -T svg > dependency-graph-preview.svg"
   },
   "license": "MIT",
   "engines": {
@@ -54,6 +55,7 @@
     "@vue/eslint-config-typescript": "^14.5.0",
     "@vue/test-utils": "^2.4.6",
     "@vue/tsconfig": "^0.7.0",
+    "dependency-cruiser": "^16.10.1",
     "eslint": "^9.25.1",
     "eslint-plugin-boundaries": "^5.0.1",
     "eslint-plugin-import": "^2.31.0",
