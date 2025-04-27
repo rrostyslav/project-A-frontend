@@ -1,5 +1,6 @@
 export default {
   extends: ['@commitlint/config-conventional'],
+  ignores: [(commit) => commit.startsWith('chore(release):')],
   rules: {
     'body-leading-blank': [1, 'always'],
     'body-max-line-length': [2, 'always', 100],
