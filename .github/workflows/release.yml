@@ -24,7 +24,7 @@ jobs:
 
       - name: Run release
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PROJECT_A_SECRET }}
           # add NPM_TOKEN here if you publish to npm:
           # NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: bun run release
