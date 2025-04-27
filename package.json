@@ -13,6 +13,8 @@
     "type-check": "vue-tsc --build",
     "lint:oxlint": "oxlint . --fix -D correctness --ignore-path .gitignore",
     "lint:eslint": "eslint . --fix",
+    "check": "bunx steiger ./src",
+    "check:watch": "bunx steiger ./src --watch",
     "format": "prettier --write src/",
     "prepare": "lefthook install",
     "clean": "rimraf dist && rimraf node_modules"
@@ -22,6 +24,8 @@
     "node": ">=22.0.0 <23.0.0"
   },
   "dependencies": {
+    "@eslint/compat": "^1.2.8",
+    "@feature-sliced/filesystem": "^3.0.1",
     "@unhead/vue": "^2.0.8",
     "class-variance-authority": "^0.7.1",
     "classnames": "^2.5.1",
@@ -36,6 +40,8 @@
   "devDependencies": {
     "@commitlint/cli": "^19.8.0",
     "@commitlint/config-conventional": "^19.8.0",
+    "@feature-sliced/eslint-config": "^0.1.1",
+    "@feature-sliced/steiger-plugin": "^0.5.5",
     "@playwright/test": "^1.52.0",
     "@tailwindcss/vite": "^4.1.4",
     "@tsconfig/node22": "^22.0.1",
@@ -49,7 +55,8 @@
     "@vue/test-utils": "^2.4.6",
     "@vue/tsconfig": "^0.7.0",
     "eslint": "^9.25.1",
-    "eslint-plugin-oxlint": "^0.16.8",
+    "eslint-plugin-boundaries": "^5.0.1",
+    "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-playwright": "^2.2.0",
     "eslint-plugin-vue": "^10.0.0",
     "jiti": "^2.4.2",
@@ -57,7 +64,6 @@
     "lefthook": "^1.11.11",
     "lint-staged": "^15.5.1",
     "npm-run-all2": "^7.0.2",
-    "oxlint": "^0.16.8",
     "prettier": "^3.5.3",
     "tailwindcss": "^4.1.4",
     "typescript": "~5.8.3",
