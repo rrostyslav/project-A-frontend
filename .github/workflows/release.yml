@@ -1,11 +1,10 @@
 name: Release
 
 on:
-  workflow_dispatch:
-
-permissions:
-  contents: write
-  pull-requests: write
+  push:
+    branches:
+      - main
+      - next
 
 jobs:
   release:
@@ -23,18 +22,9 @@ jobs:
       - name: Install dependencies
         run: bun install
 
-      - name: Run Release
+      - name: Run release
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PROJECT_A_SECRET }}
+          # add NPM_TOKEN here if you publish to npm:
+          # NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: bun run release
-
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v6
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "chore(release): prepare for next version"
-          title: "chore(release): prepare for next version"
-          body: "Automated PR for release. Please review and approve."
-          branch: release/next
-          base: main
-          labels: release
