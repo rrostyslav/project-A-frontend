@@ -4,6 +4,6 @@ import Typography from '@/shared/ui/typography/Typography.vue'
 </script>
 <template>
   <div>Hello User!</div>
-  <Typography typography="title3" color="chart-2" weight="medium"> Test Typography </Typography>
+  <Typography typography="title3" color="chart-2" weight="medium"> Test Typography test </Typography>
   <SpriteIcon color="red" height="244" name="home" width="244" />
 </template>
