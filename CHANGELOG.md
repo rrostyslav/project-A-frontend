@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/rrostyslav/project-A-frontend/compare/v1.2.0...v1.3.0) (2025-04-28)
+
+
+### Features
+
+* test ci ([0cddb8d](https://github.com/rrostyslav/project-A-frontend/commit/0cddb8d3bded99e5f2ec670070f43c9dcb06fa0b))
+
 # 1.0.0 (2025-04-27)
 
 
