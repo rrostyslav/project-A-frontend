@@ -9,9 +9,9 @@ import { RouterLink } from 'vue-router'
     class="flex flex-col items-center justify-center w-full h-svh bg-gradient-to-b from-[rgb(15,16,17)] to-[rgb(8,8,8)] px-4 space-y-8"
   >
     <section class="flex flex-col items-center text-center gap-6">
-      <SpriteIcon class="w-14 h-14" color="white" name="linear" />
+      <SpriteIcon class="w-14 h-14" color="white" name="alert" />
       <Typography as="h1" color="secondary-foreground" typography="title2" weight="medium">
-        Log in to Linear
+        Log in to Alert
       </Typography>
     </section>
 
