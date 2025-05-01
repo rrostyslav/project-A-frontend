@@ -2,6 +2,7 @@
 import { SpriteIcon } from '@/shared/ui/icon'
 import { Typography } from '@/shared/ui/typography'
 import { RouterLink } from 'vue-router'
+import { Checkbox } from '@/shared/ui/checkbox'
 </script>
 
 <template>
@@ -11,7 +12,7 @@ import { RouterLink } from 'vue-router'
     <section class="flex flex-col items-center text-center gap-6">
       <SpriteIcon class="w-14 h-14" color="white" name="alert" />
       <Typography as="h1" color="secondary-foreground" typography="title2" weight="medium">
-        Log in to Alert
+        Log in to Line up
       </Typography>
     </section>
 
@@ -53,5 +54,14 @@ import { RouterLink } from 'vue-router'
       Don’t have an account?
       <RouterLink class="underline hover:text-white" to="/signup"> Sign up </RouterLink>
     </section>
+    <div class="flex items-center space-x-2">
+      <Checkbox id="terms" />
+      <label
+        class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+        for="terms"
+      >
+        Accept terms and conditions
+      </label>
+    </div>
   </div>
 </template>
