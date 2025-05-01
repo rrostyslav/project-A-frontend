@@ -1,25 +1,26 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { ROUTES } from '@/shared/types'
-import { DefaultLayout } from '@/shared/ui/layouts'
+import { GuestLayout } from '@/shared/ui/layouts'
 
-const GreetingPage = () => import('@/pages/greeting').then(({ GreetingPage }) => GreetingPage)
-const NotFoundPage = () => import('@/pages/not-found').then(({ NotFoundPage }) => NotFoundPage)
-
-const routes = [
-  {
-    path: ROUTES.GREETING,
-    name: 'greeting',
-    component: GreetingPage,
-    meta: { layout: DefaultLayout },
-  },
-  {
-    path: ROUTES.NOT_FOUND,
-    name: 'not-found',
-    component: NotFoundPage,
-  },
-]
+const LoginPage = () => import('@/pages/login').then((m) => m.Login)
+const SignupPage = () => import('@/pages/signup').then((m) => m.Signup)
 
 export const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes,
+  routes: [
+    { path: '/', redirect: ROUTES.LOGIN },
+    {
+      path: ROUTES.LOGIN,
+      name: 'login',
+      component: LoginPage,
+      meta: { layout: GuestLayout },
+    },
+    {
+      path: ROUTES.SIGNUP,
+      name: 'signup',
+      component: SignupPage,
+      meta: { layout: GuestLayout },
+    },
+    { path: '/:pathMatch(.*)*', redirect: ROUTES.LOGIN },
+  ],
 })

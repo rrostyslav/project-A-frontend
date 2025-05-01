@@ -1,5 +1,6 @@
 export const ROUTES = {
-  GREETING: '/',
+  LOGIN: '/login',
+  SIGNUP: '/signup',
   NOT_FOUND: '/:pathMatch(.*)*',
 }
 
