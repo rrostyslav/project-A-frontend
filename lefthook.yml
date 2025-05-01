@@ -1,4 +1,3 @@
-# lefthook.yml
 colors: true
 skip_output: [meta, success]
 
@@ -65,7 +64,6 @@ post-checkout:
     setup:
       run: |
         echo "🧹 Preparing workspace..."
-        bun run clean
         # $3 = "1" when switching branches
         if [ "$3" = "1" ] && git diff --name-only $1 $2 | grep -E 'bun\.lock|package\.json'; then
           echo "📦 Updating dependencies for new branch..."
