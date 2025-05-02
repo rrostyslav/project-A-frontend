@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "bunx --bun vite --open",
+    "dev": "bunx --bun vite",
     "build-only": "bunx --bun vite build",
     "build": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
@@ -20,7 +20,9 @@
     "codegen": "bunx graphql-codegen --config src/shared/config/codegen.ts",
     "codegen:watch": "bunx graphql-codegen --config src/shared/config/codegen.ts --watch",
     "dep-cruiser:preview": "bunx depcruise src --include-only \"^src\" --output-type dot | dot -T svg > dependency-graph-preview.svg",
-    "segments:generate": "bunx fsd"
+    "segments:generate": "bunx fsd",
+    "docker:dev": "bash scripts/docker-dev.sh",
+    "docker:prod": "bash scripts/docker-prod.sh"
   },
   "license": "MIT",
   "engines": {

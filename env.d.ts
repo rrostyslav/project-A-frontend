@@ -23,6 +23,11 @@ interface ImportMetaEnv {
   readonly VITE_PORT: string
 
   /**
+   * Dev server host
+   */
+  readonly VITE_HOST: string
+
+  /**
    * Preview server port
    */
   readonly VITE_PREVIEW_PORT: string

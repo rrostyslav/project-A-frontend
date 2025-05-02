@@ -32,8 +32,9 @@ export default defineConfig(({ mode }) => {
     },
 
     server: {
+      host: env.VITE_HOST,
       port: Number(env.VITE_PORT),
-      open: true,
+      open: false,
     },
 
     preview: {
