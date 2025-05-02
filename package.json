@@ -37,6 +37,7 @@
     "@feature-sliced/filesystem": "^3.0.1",
     "@storybook/vue3-vite": "^8.6.12",
     "@unhead/vue": "^2.0.8",
+    "@vueuse/core": "^13.1.0",
     "class-variance-authority": "^0.7.1",
     "classnames": "^2.5.1",
     "clsx": "^2.1.1",
