@@ -3,12 +3,18 @@ import { ROUTES } from '@/shared/types'
 import { GuestLayout } from '@/shared/ui/layouts'
 
 const LoginPage = () => import('@/pages/login').then((m) => m.Login)
+const WelcomePage = () => import('@/pages/welcome').then((m) => m.Welcome)
 const SignupPage = () => import('@/pages/signup').then((m) => m.Signup)
 
 export const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    { path: '/', redirect: ROUTES.LOGIN },
+    {
+      path: ROUTES.WELCOME,
+      name: 'welcome',
+      component: WelcomePage,
+      meta: { layout: GuestLayout },
+    },
     {
       path: ROUTES.LOGIN,
       name: 'login',
@@ -21,6 +27,6 @@ export const router = createRouter({
       component: SignupPage,
       meta: { layout: GuestLayout },
     },
-    { path: '/:pathMatch(.*)*', redirect: ROUTES.LOGIN },
+    { path: '/:pathMatch(.*)*', redirect: ROUTES.WELCOME },
   ],
 })

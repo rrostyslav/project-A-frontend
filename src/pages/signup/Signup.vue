@@ -9,7 +9,7 @@ import { RouterLink } from 'vue-router'
     class="flex flex-col items-center justify-center w-full h-svh bg-gradient-to-b from-[rgb(15,16,17)] to-[rgb(8,8,8)] px-4 space-y-8 text-white"
   >
     <section class="flex flex-col items-center text-center gap-6">
-      <SpriteIcon class="w-14 h-14" color="white" name="alert" />
+      <sprite-icon class="w-20 h-20 text-white delay-200" name="project-a" />
       <Typography as="h1" typography="title2" weight="medium"> Create your workspace </Typography>
     </section>
 
@@ -44,7 +44,7 @@ import { RouterLink } from 'vue-router'
     <section class="max-w-sm text-center text-sm text-gray-400">
       <p class="mb-0">
         Already have an account?
-        <RouterLink class="underline hover:text-white" to="/login"> Log in </RouterLink>
+        <router-link class="underline hover:text-white" to="/login"> Log in </router-link>
       </p>
     </section>
   </div>

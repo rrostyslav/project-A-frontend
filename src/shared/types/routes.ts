@@ -1,4 +1,5 @@
 export const ROUTES = {
+  WELCOME: '/',
   LOGIN: '/login',
   SIGNUP: '/signup',
   NOT_FOUND: '/:pathMatch(.*)*',

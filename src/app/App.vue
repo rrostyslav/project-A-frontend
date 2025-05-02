@@ -4,7 +4,7 @@ import { GuestLayout } from '@/shared/ui/layouts'
 </script>
 
 <template>
-  <RouterView v-slot="{ Component, route }">
+  <router-view v-slot="{ Component, route }">
     <transition
       appear
       enter-active-class="transition transform duration-300 ease-out"
@@ -19,5 +19,5 @@ import { GuestLayout } from '@/shared/ui/layouts'
         <component :is="Component" />
       </component>
     </transition>
-  </RouterView>
+  </router-view>
 </template>
