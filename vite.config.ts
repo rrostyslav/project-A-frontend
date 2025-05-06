@@ -4,6 +4,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import tailwindcss from '@tailwindcss/vite'
 import vueDevTools from 'vite-plugin-vue-devtools'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
+import checker from 'vite-plugin-checker'
 import path from 'path'
 
 export default defineConfig(({ mode }) => {
@@ -15,7 +16,10 @@ export default defineConfig(({ mode }) => {
       vue(),
       vueJsx(),
       tailwindcss(),
-
+      checker({
+        vueTsc: true,
+        typescript: true,
+      }),
       mode === 'development' && vueDevTools(),
 
       createSvgIconsPlugin({
