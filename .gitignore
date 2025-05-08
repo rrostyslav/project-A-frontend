@@ -35,3 +35,4 @@ test-results/
 playwright-report/
 dependency-graph-preview.svg
 storybook-static
+src/shared/gql/generated.ts

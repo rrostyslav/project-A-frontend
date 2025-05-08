@@ -8,6 +8,7 @@ const GRAPHQL_URL = process.env.VITE_APOLLO_URL ?? 'http://localhost:4000/graphq
 const codegenConfig: CodegenConfig = {
   schema: GRAPHQL_URL,
   documents: ['src/**/*.{vue,ts,graphql}'],
+  ignoreNoDocuments: true,
   generates: {
     'src/shared/gql/generated.ts': {
       plugins: ['typescript', 'typescript-operations', 'typescript-vue-apollo'],
@@ -15,6 +16,12 @@ const codegenConfig: CodegenConfig = {
         withCompositionFunctions: true,
         vueCompositionPlugin: true,
         namingConvention: { typeNames: 'keep', enumValues: 'keep' },
+        pluckConfig: {
+          modules: [
+            { name: 'graphql-tag', identifier: 'gql' },
+            { name: '@vue/apollo-composable', identifier: 'gql' },
+          ],
+        },
       },
     },
   },
